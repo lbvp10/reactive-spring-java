@@ -1,9 +1,7 @@
 package com.reactiva.demo;
 
+import java.util.Collection;
 import java.util.List;
-
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,7 +15,11 @@ public class PersonaService {
 
 	@Autowired
 	PersonaRepository personaRepository;
-
+	
+	@Autowired
+	TransaccionalBatch<Persona> transaccionalBatch;
+	
+	
 	
 	public Flux<Persona> guardarPersona(List<Persona> personas) {
 		Flux<Persona> flux = Flux.create(a->{
@@ -27,4 +29,19 @@ public class PersonaService {
 		
 		return flux;
 	}
+
+
+
+
+	public Collection<Persona> bulkSave(List<Persona> personas) {
+		transaccionalBatch.saveAll(personas);
+		return personas;
+	}
+	
+	
+
+
+	
+	
+	
 }

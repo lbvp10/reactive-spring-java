@@ -10,15 +10,15 @@ spring:
     password: postgres
 # JPA properties
   jpa:
+    show-sql: true
     hibernate:
       ddl-auto: create
-      show-sql: true
     properties:
       dialect: org.hibernate.dialect.PostgreSQL95Dialect
       hibernate:
         show-sql: true
         jdbc:
-          batch_size: 50
+          batch_size: 5000
           lob:
             non_contextual_creation: true
 # Server configuration
