@@ -1,0 +1,27 @@
+# Spring Boot configuration
+spring:
+  profiles:
+    active: development
+# Database
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/persona
+    username: postgres
+    password: postgres
+# JPA properties
+  jpa:
+    hibernate:
+      ddl-auto: create
+      show-sql: true
+    properties:
+      dialect: org.hibernate.dialect.PostgreSQL95Dialect
+      hibernate:
+        show-sql: true
+        jdbc:
+          batch_size: 50
+          lob:
+            non_contextual_creation: true
+# Server configuration
+server:
+  port: 8081
+  sessionTimeout: 30

@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: reactiva
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Administrador
+Implementation-Vendor-Id: com.reactiva
+Build-Jdk: 1.8.0_111
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/demo
+Created-By: Maven Integration for Eclipse
+
